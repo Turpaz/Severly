@@ -1,0 +1,12 @@
+body {
+	background: #444;
+}
+
+#content {
+	background: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #000;
+	margin-top: 2ch;
+	margin-bottom: 2ch;
+}
