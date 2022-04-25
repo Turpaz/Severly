@@ -16,7 +16,7 @@ function AddServer() {
 				_TypeName: serverTypeName,
 				_TypePPM: serverTypePPM,
 			};
-			const response = await fetch("http://localhost:3001/add", {
+			const response = await fetch("/add", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(body),

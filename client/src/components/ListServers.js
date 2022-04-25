@@ -8,7 +8,7 @@ const api = "https://api.exchangerate-api.com/v4/latest/USD";
 function ListServers() {
 	const [servers, setServers] = useState([]);
 	const [counter, setCounter] = useState(0);
-	const [currencyRate, setCurrencyRate] = useState(0);
+	const [currencyRate, setCurrencyRate] = useState(1);
 
 	const updateCurrency = async (currency) => {
 		try {
@@ -25,7 +25,7 @@ function ListServers() {
 
 	const getServers = async () => {
 		try {
-			const response = await fetch("http://localhost:3001/get");
+			const response = await fetch("/get");
 			const data = await response.json();
 
 			setServers(data);
@@ -37,7 +37,7 @@ function ListServers() {
 	const deleteServer = async (id) => {
 		if (window.confirm("Are you sure?") === true) {
 			try {
-				const response = await fetch("http://localhost:3001/delete/" + id, {
+				const response = await fetch("/delete/" + id, {
 					method: "DELETE",
 				});
 
@@ -53,7 +53,7 @@ function ListServers() {
 			const body = {
 				_IsRunning: !server._isrunning,
 			};
-			const res = await fetch("http://localhost:3001/toggle/" + server._id, {
+			const res = await fetch("/toggle/" + server._id, {
 				method: "PUT",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(body),

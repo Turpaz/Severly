@@ -15,7 +15,7 @@ function EditServer({ server }) {
 				_TypeName: title,
 				_TypePPM: ppm,
 			};
-			const res = await fetch("http://localhost:3001/update/" + server._id, {
+			const res = await fetch("/update/" + server._id, {
 				method: "PUT",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(body),
