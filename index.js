@@ -4,7 +4,7 @@ const cors = require("cors");
 const pool = require("./db");
 const path = require("path");
 
-const PORT = process.nextTick.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
