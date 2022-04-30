@@ -8,7 +8,6 @@ function AddServer() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log(serverName, serverIP, serverTypeName, serverTypePPM);
 		try {
 			const body = {
 				_Name: serverName,
